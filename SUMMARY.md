@@ -1,9 +1,9 @@
 # Summary
 
 * [Introduction](README.md)
-* [content/chapter1.md](content/chapter1.md)
-* [content/chapter2.md](content/chapter2.md)
-* [content/chapter3.md](content/chapter3.md)
-* [content/chapter4.md](content/chapter4.md)
-* [content/literature.md](content/literature.md)
+* [1.](content/chapter1.md)
+* [2.](content/chapter2.md)
+* [3.](content/chapter3.md)
+* [4.](content/chapter4.md)
+* [Список литературы](content/literature.md)
 
