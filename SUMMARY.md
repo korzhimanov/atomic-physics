@@ -1,9 +1,10 @@
 # Summary
 
 * [Introduction](README.md)
-* [1.](content/chapter1.md)
-* [2.](content/chapter2.md)
-* [3.](content/chapter3.md)
-* [4.](content/chapter4.md)
+* [1. Введение](content/chapter1.md)
+* [2. Проблема теплового излучения](content/chapter2.md)
+* [3. Фотоны](content/chapter3.md)
+* [4. Волновые свойства частиц](content/chapter4.md)
+* [5. Теория атома Бора](content/chapter5.md)
+* [6. Введение в аппарат физики микрообъектов](content/chapter6.md)
 * [Список литературы](content/literature.md)
-
