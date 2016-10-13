@@ -7,4 +7,5 @@
 * [4. Волновые свойства частиц](content/chapter4.md)
 * [5. Теория атома Бора](content/chapter5.md)
 * [6. Введение в аппарат физики микрообъектов](content/chapter6.md)
+* [7. Квантово-механическая теория атома](content/chapter7.md)
 * [Список литературы](content/literature.md)
