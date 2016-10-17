@@ -8,4 +8,5 @@
 * [5. Теория атома Бора](content/chapter5.md)
 * [6. Введение в аппарат физики микрообъектов](content/chapter6.md)
 * [7. Квантово-механическая теория атома](content/chapter7.md)
+* [8. Магнитные свойства атомов](content/chapter8.md)
 * [Список литературы](content/literature.md)
