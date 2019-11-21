@@ -8,22 +8,21 @@
 	"buffers":
 	[
 		{
-			"file": "content/chapter3.md",
+			"file": "content/chapter5.md",
 			"settings":
 			{
-				"buffer_size": 16614,
+				"buffer_size": 14360,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/artem/.config/sublime-text-3/Packages/User/Markdown-atomic-physics.sublime-build",
+			"file": "content/seminar1.md",
 			"settings":
 			{
-				"buffer_size": 577,
+				"buffer_size": 4819,
 				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "untitled.sublime-build"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -55,16 +54,32 @@
 		"selected_items":
 		[
 			[
+				"ima",
+				"Snippet: Markdown Image"
+			],
+			[
+				"imag",
+				"Snippet: Markdown Image"
+			],
+			[
+				"bui",
+				"Build With: Markdown-atomic-physics"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"buil",
+				"Build With: Markdown-atomic-physics"
+			],
+			[
 				"prev",
 				"Markdown Preview: Preview in Browser"
 			],
 			[
 				"pre",
 				"Markdown Preview: Preview in Browser"
-			],
-			[
-				"imag",
-				"Snippet: Markdown Image"
 			],
 			[
 				"insta",
@@ -80,10 +95,6 @@
 			],
 			[
 				"inst",
-				"Package Control: Install Package"
-			],
-			[
-				"pack",
 				"Package Control: Install Package"
 			],
 			[
@@ -123,10 +134,13 @@
 	],
 	"file_history":
 	[
+		"/home/artem/projects/github/atomic-physics/content/chapter4.md",
+		"/home/artem/projects/github/atomic-physics/pdf/chapter4.pdf",
+		"/home/artem/projects/github/atomic-physics/content/chapter3.md",
+		"/home/artem/.config/sublime-text-3/Packages/User/Markdown-atomic-physics.sublime-build",
 		"/home/artem/projects/github/atomic-physics/atomic-physics.sublime-project",
 		"/home/artem/projects/github/atomic-physics/.sublime-build",
 		"/home/artem/projects/github/atomic-physics/img/photoeffect-scheme.svg",
-		"/home/artem/projects/github/atomic-physics/content/chapter3.md",
 		"/home/artem/.config/sublime-text-3/Packages/MarkdownPreview/MarkdownPreview.sublime-settings",
 		"/home/artem/.config/sublime-text-3/Packages/Git/Git.sublime-settings",
 		"/home/artem/projects/github/atomic-physics/content/literature.md"
@@ -147,6 +161,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"энергетич"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -164,65 +179,63 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "content/chapter3.md",
+					"file": "content/chapter5.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16614,
+						"buffer_size": 14360,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1103,
-								1103
+								2346,
+								2346
 							]
 						],
 						"settings":
 						{
-							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage",
-							"target": "disk"
+							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 819.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/home/artem/.config/sublime-text-3/Packages/User/Markdown-atomic-physics.sublime-build",
+					"file": "content/seminar1.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 577,
+						"buffer_size": 4819,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								573,
-								573
+								4819,
+								4819
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3312.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

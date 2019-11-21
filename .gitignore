@@ -6,3 +6,4 @@ literature
 tex
 xcf
 notebooks/.ipynb_checkpoints
+*.sublime-workspace
