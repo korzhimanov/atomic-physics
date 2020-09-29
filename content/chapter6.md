@@ -692,10 +692,10 @@ z = r\cos\vartheta
 $$
 В этой системе координат операторы проекций момента импульса запишутся в виде:
 $$
-\hat L_x = i\hbar\left(\sin\phi\frac{\partial}{\partial\vartheta} + \rm{ctg}\vartheta\cos\phi\frac{\partial}{\partial\phi}\right)
+\hat L_x = i\hbar\left(\sin\phi\frac{\partial}{\partial\vartheta} + \mathrm{ctg}\,\vartheta\cos\phi\frac{\partial}{\partial\phi}\right)
 $$
 $$
-\hat L_y = i\hbar\left(-\cos\phi\frac{\partial}{\partial\vartheta} + \rm{ctg}\vartheta\sin\phi\frac{\partial}{\partial\phi}\right)
+\hat L_y = i\hbar\left(-\cos\phi\frac{\partial}{\partial\vartheta} + \mathrm{ctg}\,\vartheta\sin\phi\frac{\partial}{\partial\phi}\right)
 $$
 $$
 \hat L_z = -i\hbar\frac{\partial}{\partial\phi}
