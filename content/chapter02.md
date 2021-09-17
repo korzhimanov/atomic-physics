@@ -112,7 +112,7 @@ $$
 
 Из этой формулы можно вывести закон Стефана — Больцмана:
 $$
-u = \int u_\nu d\nu = \int \nu^3 \Phi\left(\frac{\nu}{T}\right) d\nu = T^4 \int \xi \Phi(\xi) d\xi = \sigma T^4
+u = \int u_\nu d\nu = \int \nu^3 \Phi\left(\frac{\nu}{T}\right) d\nu = T^4 \int \xi \Phi(\xi) d\xi = a T^4
 $$
 
 ### Закон смещения Вина
