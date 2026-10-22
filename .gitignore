@@ -1,8 +1,6 @@
 .atom-build.yml
 pdf
 html
-styles
 literature
-xcf
 notebooks/.ipynb_checkpoints
 *.sublime-workspace

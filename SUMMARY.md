@@ -1,13 +1,13 @@
 # Summary
 
-* [Introduction](README.md)
+* [О курсе](README.md)
 * [1. Введение](content/chapter01.md)
 * [2. Проблема теплового излучения](content/chapter02.md)
 * [3. Фотоны](content/chapter03.md)
 * [4. Волновые свойства частиц](content/chapter04.md)
 * [5. Теория атома Бора](content/chapter05.md)
 * [6. Введение в аппарат физики микрообъектов](content/chapter06.md)
-* [7. Квантово-механическая теория атома](content/chapter07.md)
+* [7. Квантовомеханическая теория водородоподобных атомов](content/chapter07.md)
 * [8. Магнитные свойства атомов](content/chapter08.md)
 * [9. Спин-орбитальное взаимодействие и тонкая структура спектральных линий](content/chapter09.md)
 * [10. Многоэлектронные квантовые системы](content/chapter10.md)
