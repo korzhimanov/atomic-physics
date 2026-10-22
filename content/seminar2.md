@@ -14,7 +14,7 @@ $$
 
 Импульс фотона:
 $$
-E = \hbar k = \frac{h}{\lambda}
+p = \hbar k = \frac{h}{\lambda}
 $$
 
 Для фотона видимого диапазона $\lambda=800$ нм:

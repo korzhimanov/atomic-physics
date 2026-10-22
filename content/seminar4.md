@@ -58,7 +58,7 @@ $$
 k_na = \pi n,\ n=1,2,\dots
 $$
 $$
-E_n = \frac{\hbar^2k_n^2}{2m} = \frac{\hbar^2\pi^2}{2ma}n^2
+E_n = \frac{\hbar^2k_n^2}{2m} = \frac{\hbar^2\pi^2}{2ma^2}n^2
 $$
 Соответствующие собственные функции:
 $$
@@ -122,7 +122,7 @@ $$
 
 Получили математически эквивалентную задачу, следовательно:
 $$
-E_n = \frac{\hbar^2\pi^2}{2ma}n^2
+E_n = \frac{\hbar^2\pi^2}{2ma^2}n^2
 $$
 $$
 \psi_n(r) = \frac{A_n}{r}\sin\frac{\pi nr}{a}
