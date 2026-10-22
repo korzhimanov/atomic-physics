@@ -1,4 +1,5 @@
 .RECIPEPREFIX = >
+.PHONY: pdf pdf-sem pdf-all
 
 pdf: content/chapter$(N).md
 > mkdir -p pdf
