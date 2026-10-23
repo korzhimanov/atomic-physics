@@ -12,6 +12,8 @@
 
 Нужны pandoc и XeLaTeX со шрифтом Liberation Serif.
 
+Дата на титуле подставляется автоматически: день последнего коммита, затронувшего собираемые файлы, либо сегодняшний день, если есть незакоммиченные правки.
+
     make pdf N=06       # одна глава → pdf/chapter06.pdf
     make pdf-sem N=1    # один семинар → pdf/seminar1.pdf
     make pdf-all        # вся книга → pdf/atomic-physics.pdf
