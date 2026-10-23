@@ -1,0 +1,56 @@
+% Дополнения к преамбуле стандартного шаблона pandoc.
+% Подключается ко всем целям makefile через -H tex/preamble.tex.
+
+\makeatletter
+
+% --- Десятичная запятая в формулах -----------------------------------------
+% icomma делает запятую в математике активной: «2,5» печатается без пробела.
+\usepackage{icomma}
+% Уточнение правила icomma. В исходном варианте запятая теряет пробел перед
+% любым непробельным символом, из-за чего слипаются «f(\nu,T)», «1,\dots»,
+% «n=1,2,3,\dots». Здесь запятая считается десятичной, только если сразу за
+% ней идёт цифра и за этой группой цифр не следует новая запятая.
+\def\icomma@ifdigit{%
+  \let\icomma@next\@secondoftwo
+  \@tfor\icomma@d:=0123456789\do{%
+    \expandafter\ifx\icomma@d\@let@token\let\icomma@next\@firstoftwo\fi}%
+  \icomma@next}
+\def\sm@rtcomma{%
+  \icomma@ifdigit{\let\icomma@digits\@empty\icomma@scan}{\mathcomma}}
+\def\icomma@scan#1{%
+  \expandafter\def\expandafter\icomma@digits\expandafter{\icomma@digits#1}%
+  \futurelet\@let@token\icomma@loop}
+\def\icomma@loop{\icomma@ifdigit\icomma@scan\icomma@decide}
+\def\icomma@decide{%
+  \ifx\@let@token,%
+    \let\icomma@next\mathcomma
+  \else
+    \def\icomma@next{\mathord{\mathcomma}}%
+  \fi
+  \expandafter\icomma@next\icomma@digits}
+
+% --- Колонтитулы (только для книги) -----------------------------------------
+\@ifclassloaded{book}{%
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[RE]{\small\nouppercase{\leftmark}}
+  \fancyhead[LO]{\small\nouppercase{\rightmark}}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \setlength{\headheight}{14pt}
+  \addtolength{\topmargin}{-2pt}
+  % первые страницы глав: без колонтитула, номер страницы внизу
+  \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}%
+    \renewcommand{\headrulewidth}{0pt}}
+  % марки без заглавных букв
+  \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. #1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection. #1}}
+  % ненумерованные главы (\chapter*: список литературы) тоже обновляют марки;
+  % \@mkboth внутри аргумента (так устроен \tableofcontents) отбрасывается
+  \let\orig@schapter\@schapter
+  \def\@schapter#1{\orig@schapter{#1}%
+    {\let\@mkboth\@gobbletwo\markboth{#1}{#1}}}
+}{}
+
+\makeatother
