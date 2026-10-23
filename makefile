@@ -1,9 +1,9 @@
 .RECIPEPREFIX = >
 .PHONY: pdf pdf-sem pdf-all
 
-# Дата на титуле: день последнего коммита, затронувшего собираемые файлы;
+# Дата на титуле в формате «23 октября 2026»: день последнего коммита, затронувшего собираемые файлы;
 # при незакоммиченных правках или без git — сегодняшний день.
-lastdate = d=$$(git log -1 --format=%ad --date=short -- $(1) 2>/dev/null); if [ -z "$$d" ] || [ -n "$$(git status --porcelain -- $(1) 2>/dev/null)" ]; then d=$$(date +%F); fi; echo "$$d"
+lastdate = d=$$(git log -1 --format=%ad --date=short -- $(1) 2>/dev/null); if [ -z "$$d" ] || [ -n "$$(git status --porcelain -- $(1) 2>/dev/null)" ]; then d=$$(date +%F); fi; mo=$$(echo $$d | cut -d- -f2 | sed "s/^0//"); echo "$$(echo $$d | cut -d- -f3 | sed "s/^0//") $$(echo "января февраля марта апреля мая июня июля августа сентября октября ноября декабря" | cut -d" " -f$$mo) $$(echo $$d | cut -d- -f1)"
 
 pdf: content/chapter$(N).md
 > mkdir -p pdf
