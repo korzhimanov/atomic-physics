@@ -1,6 +1,6 @@
 .RECIPEPREFIX = >
 export LC_ALL = C.UTF-8
-.PHONY: pdf pdf-sem pdf-all
+.PHONY: pdf pdf-sem pdf-all figures
 
 # Дата на титуле в формате «23 октября 2026»: день последнего коммита, затронувшего собираемые файлы;
 # при незакоммиченных правках или без git — сегодняшний день.
@@ -17,3 +17,7 @@ pdf-sem: content/seminar$(N).md
 pdf-all: content/chapter*.md
 > mkdir -p pdf
 > pandoc -V documentclass=book -V papersize=A4 -V fontenc=T2A -V linkcolor=cyan -V babel-lang=russian -V mainfont="Liberation Serif" -M date="$$($(call lastdate,content/chapter*.md content/literature.md))" -H tex/preamble.tex --pdf-engine=xelatex -f markdown+smart --toc --top-level-division=chapter --number-sections content/chapter*.md content/literature.md content/title.yaml -s -o pdf/atomic-physics.pdf
+
+# Пересборка рисунков img/*.svg из скриптов figures/*.py (нужны numpy, scipy, matplotlib)
+figures:
+> cd figures && for f in *.py; do [ "$$f" = common.py ] || python3 "$$f" || exit 1; done

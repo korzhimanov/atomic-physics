@@ -5,7 +5,7 @@
 ## Структура репозитория
 
 - `content/chapterNN.md` — главы лекций, `content/seminarN.md` — семинары, `content/literature.md` — список литературы, `content/title.yaml` — метаданные для сборки книги целиком.
-- `img/` — иллюстрации, `xcf/` — исходники некоторых из них, `notebooks/` — Jupyter-ноутбуки, которыми построены графики.
+- `img/` — иллюстрации; `figures/` — скрипты на Python, которыми построены графики и схемы в формате SVG (общий стиль задан в `figures/common.py`).
 - `SUMMARY.md` и `book.json` — оглавление и настройки для GitBook.
 
 ## Сборка PDF
@@ -17,3 +17,11 @@
     make pdf N=06       # одна глава → pdf/chapter06.pdf
     make pdf-sem N=1    # один семинар → pdf/seminar1.pdf
     make pdf-all        # вся книга → pdf/atomic-physics.pdf
+
+## Сборка рисунков
+
+Графики и схемы, для которых в `figures/` есть скрипт, строятся командой
+
+    make figures        # все скрипты figures/*.py → img/*.svg
+
+Нужны Python 3 с пакетами numpy, scipy и matplotlib. Повторный запуск даёт побайтно те же файлы, поэтому в git попадают только настоящие изменения рисунков. Для сборки PDF с SVG-рисунками pandoc использует `rsvg-convert` (пакет librsvg2-bin).
