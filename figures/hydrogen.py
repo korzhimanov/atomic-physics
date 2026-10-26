@@ -97,7 +97,29 @@ def degeneracy():
     cm.save(fig, "hydrogen-degeneracy")
 
 
+def effective_potential():
+    """Эффективная потенциальная энергия −2/ρ + l(l+1)/ρ² (в единицах Ry, ρ = r/r_B)."""
+    fig, ax = cm.subplots(width=3.2, height=2.3)
+    rho = np.linspace(0.05, 14, 1000)
+    styles = {0: dict(color=cm.INK, lw=1.4), 1: dict(color=cm.BLUE), 2: dict(color=cm.ORANGE)}
+    labels = {0: (1.3, -1.75, "$l=0$"), 1: (1.15, 0.55, "$l=1$"), 2: (3.6, 0.5, "$l=2$")}
+    for l in (0, 1, 2):
+        U = -2 / rho + l * (l + 1) / rho**2
+        ax.plot(rho, U, **styles[l])
+        ax.text(*labels[l][:2], labels[l][2], fontsize=8)
+    ax.axhline(0, color=cm.INK2, lw=0.6)
+    for n in (1, 2):
+        ax.axhline(-1 / n**2, color=cm.C_LEVEL, lw=0.6, ls=(0, (3, 2)))
+        ax.text(14.1, -1 / n**2, f"$E_{n}$", va="center", fontsize=8)
+    ax.set_xlim(0, 14)
+    ax.set_ylim(-2.2, 1.2)
+    ax.set_xlabel(r"$r/r_B$")
+    ax.set_ylabel(r"$U_{\mathrm{эфф}}/\mathrm{Ry}$")
+    cm.save(fig, "effective-potential")
+
+
 if __name__ == "__main__":
+    effective_potential()
     angular()
     degeneracy()
     radial()

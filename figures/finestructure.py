@@ -86,6 +86,23 @@ def ls_coupling():
     cm.save(fig, "ls-coupling")
 
 
+def selection_triangle():
+    """Сохранение момента импульса при излучении: J = J' + s_ф."""
+    fig, ax = cm.subplots(width=2.2, height=1.5)
+    cm.scheme_axes(ax, (-0.3, 3.2), (-0.35, 2.0))
+    Jp = np.array([2.6, 0.5])           # момент атома после излучения
+    s_ph = np.array([-0.5, 1.3])         # спин фотона
+    J = Jp + s_ph
+    cm.arrow(ax, (0, 0), Jp, color=cm.BLUE, lw=1.2, ms=6)
+    cm.arrow(ax, Jp, J, color=cm.C_PHOTON, lw=1.2, ms=6)
+    cm.arrow(ax, (0, 0), J, color=cm.INK, lw=1.4, ms=7)
+    ax.text(1.4, 0.05, r"$\vec J^{\prime}$", fontsize=10, va="top")
+    ax.text(2.55, 1.2, r"$\vec s_{\mathrm{ф}}$", fontsize=10)
+    ax.text(0.9, 1.05, r"$\vec J$", fontsize=10, ha="right")
+    cm.save(fig, "selection-rule-triangle")
+
+
 if __name__ == "__main__":
+    selection_triangle()
     fine_structure()
     ls_coupling()

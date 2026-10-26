@@ -101,6 +101,38 @@ def ls_addition():
     cm.save(fig, "spin-orbit-addition")
 
 
+def current_loop():
+    """Виток с током: площадь S, нормаль n, магнитный момент μ; заряд dq со скоростью v."""
+    fig, ax = cm.subplots(width=2.4, height=2.1)
+    cm.scheme_axes(ax, (-1.6, 1.7), (-0.8, 2.1))
+    a, b = 1.3, 0.45
+    t = np.linspace(0, 2 * np.pi, 300)
+    ax.fill(a * np.cos(t), b * np.sin(t), color=cm.BLUE_LIGHT, lw=0)
+    ax.plot(a * np.cos(t), b * np.sin(t), color=cm.BLUE, lw=1.2)
+    ax.text(-0.55, -0.12, "$S$", fontsize=10, color=cm.INK)
+    # направление тока
+    t0 = np.radians(-60)
+    p = np.array([a * np.cos(t0), b * np.sin(t0)])
+    v = np.array([-a * np.sin(t0), b * np.cos(t0)])
+    cm.arrow(ax, p, p + 0.45 * v / np.hypot(*v), color=cm.BLUE_DARK, lw=1.2, ms=7)
+    ax.text(p[0] + 0.15, p[1] - 0.12, "$i$", fontsize=10, va="top")
+    # радиус-вектор и элемент контура
+    t1 = np.radians(25)
+    q = np.array([a * np.cos(t1), b * np.sin(t1)])
+    w = np.array([-a * np.sin(t1), b * np.cos(t1)])
+    cm.arrow(ax, (0, 0), q, color=cm.INK2, lw=0.8, ms=6)
+    ax.text(q[0] * 0.55, q[1] * 0.55 - 0.05, r"$\vec r$", fontsize=9, va="top")
+    cm.arrow(ax, q, q + 0.4 * w / np.hypot(*w), color=cm.ORANGE, lw=1.1, ms=6)
+    ax.text(q[0] + 0.12, q[1] + 0.3, r"$d\vec r$", fontsize=9)
+    # нормаль и магнитный момент
+    cm.arrow(ax, (0, 0), (0, 1.9), color=cm.INK, lw=1.3, ms=7)
+    ax.text(0.08, 1.85, r"$\vec\mu = \frac{iS}{c}\vec n$", fontsize=9, va="top")
+    cm.arrow(ax, (0, 0), (0, 0.8), color=cm.INK, lw=0.8, ms=5)
+    ax.text(-0.08, 0.7, r"$\vec n$", fontsize=9, ha="right")
+    cm.save(fig, "current-loop")
+
+
 if __name__ == "__main__":
+    current_loop()
     stern_gerlach()
     ls_addition()
