@@ -1,5 +1,6 @@
 """Глава 2 и семинар 1: распределение Планка и его предельные случаи."""
 import numpy as np
+from matplotlib.patches import Wedge, Circle
 from scipy.constants import h, c, k
 
 import common as cm
@@ -103,7 +104,67 @@ def comparison():
     cm.save(fig, "blackbody-comparison-4000K")
 
 
+def cavity():
+    """Модель абсолютно чёрного тела: полость с малым отверстием."""
+    fig, ax = cm.subplots(width=2.4, height=1.9)
+    cm.scheme_axes(ax, (-1.35, 2.0), (-1.3, 1.3))
+    R, wall, gap = 1.0, 0.16, 9      # радиус, толщина стенки, полуширина отверстия в градусах
+    ax.add_patch(Wedge((0, 0), R + wall, gap, 360 - gap, width=wall, color=cm.INK2, lw=0))
+    ax.add_patch(Circle((0, 0), R, color=cm.ORANGE_LIGHT, lw=0, zorder=0))
+    # луч входит в отверстие и многократно отражается, ослабевая
+    pts = [(1.95, -0.27), (np.cos(np.radians(150)), np.sin(np.radians(150)))]
+    for ang in (265, 30, 200, 320, 110):
+        pts.append((np.cos(np.radians(ang)), np.sin(np.radians(ang))))
+    for i, (p, q) in enumerate(zip(pts[:-1], pts[1:])):
+        a = 1.0 * 0.62 ** i
+        cm.arrow(ax, p, q, color=cm.ORANGE, lw=1.4 * a + 0.3, ms=7, alpha=max(a, 0.25))
+    ax.text(1.22, 0.12, "отверстие", fontsize=8, va="bottom")
+    ax.text(0, -1.27, r"стенки при температуре $T$", fontsize=8, ha="center", va="top")
+    cm.save(fig, "blackbody-cavity")
+
+
+def modes():
+    """Подсчёт мод: узлы решётки в k-пространстве и слой между k и k + dk."""
+    fig, ax = cm.subplots(width=2.6, height=2.5)
+    step = 1.0
+    N = 9
+    kk, dk = 6.3, 1.0
+    ax.add_patch(Wedge((0, 0), kk + dk, 0, 90, width=dk, color=cm.ORANGE_LIGHT, lw=0))
+    for i in range(1, N + 1):
+        for j in range(1, N + 1):
+            r = np.hypot(i, j) * step
+            inside = kk <= r < kk + dk
+            ax.plot(i * step, j * step, "o", ms=3.2 if inside else 2.2,
+                    color=cm.ORANGE if inside else cm.MUTED, zorder=3)
+    cm.arrow(ax, (0, 0), (N + 1.0, 0), color=cm.INK2, lw=0.7, ms=7)
+    cm.arrow(ax, (0, 0), (0, N + 1.0), color=cm.INK2, lw=0.7, ms=7)
+    ax.text(N + 1.0, -0.25, r"$k_x$", ha="right", va="top", fontsize=10)
+    ax.text(-0.2, N + 1.0, r"$k_y$", ha="right", va="top", fontsize=10)
+    for i, lab in [(1, r"$\frac{\pi}{l_x}$"), (2, r"$\frac{2\pi}{l_x}$")]:
+        ax.plot([i, i], [-0.12, 0.12], color=cm.INK2, lw=0.7)
+        ax.text(i, -0.25, lab, ha="center", va="top", fontsize=8)
+    for j, lab in [(1, r"$\frac{\pi}{l_y}$"), (2, r"$\frac{2\pi}{l_y}$")]:
+        ax.plot([-0.12, 0.12], [j, j], color=cm.INK2, lw=0.7)
+        ax.text(-0.25, j, lab, ha="right", va="center", fontsize=8)
+    t = np.radians(68)
+    cm.arrow(ax, (0, 0), (kk * np.cos(t), kk * np.sin(t)), color=cm.INK, lw=0.8, ms=7)
+    ax.text(0.5 * kk * np.cos(t) - 0.15, 0.5 * kk * np.sin(t) + 0.2, r"$k$", fontsize=10,
+            ha="right")
+    t2 = np.radians(20)
+    p1 = (kk * np.cos(t2), kk * np.sin(t2))
+    p2 = ((kk + dk) * np.cos(t2), (kk + dk) * np.sin(t2))
+    cm.arrow(ax, p1, p2, color=cm.INK, lw=0.8, ms=5, style="<|-|>")
+    ax.text(p2[0] + 0.1, p2[1] - 0.1, r"$dk$", fontsize=10, va="top")
+    ax.set_xlim(-1.3, N + 1.2)
+    ax.set_ylim(-1.3, N + 1.2)
+    ax.set_aspect("equal")
+    ax.axis("off")
+    cm.save(fig, "blackbody-modes")
+
+
 if __name__ == "__main__":
+    cavity()
+    modes()
     frequency()
     wavelength()
     comparison()
