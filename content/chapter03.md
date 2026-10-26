@@ -182,7 +182,7 @@ m_e^2c^4 + \left(p_{\text{ф}}^2 + {p_{\text{ф}}^\prime}^2 - 2p_{\text{ф}}p_{\
 m_e^2c^4 + p_{\text{ф}}^2c^2 + {p_{\text{ф}}^\prime}^2c^2 - 2p_{\text{ф}}p_{\text{ф}}^\prime c^2 + 2m_ec^3(p_{\text{ф}}-p_{\text{ф}}^\prime)
 $$
 $$
-2p_{\text{ф}}p_{\text{ф}}^\prime c^2 \cos\vartheta = 2p_{\text{ф}}p_{\text{ф}}^\prime c^2 + 2m_ec(p_{\text{ф}}-p_{\text{ф}}^\prime)
+2p_{\text{ф}}p_{\text{ф}}^\prime c^2 \cos\vartheta = 2p_{\text{ф}}p_{\text{ф}}^\prime c^2 - 2m_ec^3(p_{\text{ф}}-p_{\text{ф}}^\prime)
 $$
 $$
 \frac{1}{p_{\text{ф}}^\prime} - \frac{1}{p_{\text{ф}}} = \frac{1 - \cos\vartheta}{m_ec}

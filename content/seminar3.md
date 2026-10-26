@@ -154,7 +154,7 @@ $$
 E_1 = - \frac{m_e \omega_B^2 r_B^2}{2}
 $$
 $$
-\omega_B = \left(-\frac{2E_1}{m_e r_B^2}\right)^\frac{1}{2} = \left(\frac{2hcR_H}{m_e r_B^2}\right)^\frac{1}{2} = \text{6,16}\cdot 10^{16} \text{с}^{-1}
+\omega_B = \left(-\frac{2E_1}{m_e r_B^2}\right)^\frac{1}{2} = \left(\frac{2hcR_H}{m_e r_B^2}\right)^\frac{1}{2} = \text{4,13}\cdot 10^{16} \text{с}^{-1}
 $$
 это боровская частота. Боровский период:
 $$
