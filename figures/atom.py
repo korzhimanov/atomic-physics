@@ -117,7 +117,46 @@ def standing_wave():
     cm.save(fig, "de-broglie-orbit")
 
 
+def coulomb():
+    """Раздел «Электрон в кулоновском потенциале»: обозначения и потенциал."""
+    import angular
+    fig, (ax, ax2) = cm.subplots(1, 2, width=4.78, height=2.3,
+                                 gridspec_kw=dict(width_ratios=[1, 1.25], wspace=0.15))
+    cm.scheme_axes(ax, (-1.25, 2.4), (-1.0, 2.35))
+    p = angular.spherical_scheme(ax, r=1.6, labels=True)
+    charge(ax, (0, 0), 0.09, cm.C_NUCLEUS, "", fs=6)
+    ax.text(-0.12, 0.1, "$+Ze$", ha="right", va="bottom", fontsize=9)
+    charge(ax, p, 0.1, cm.C_ELECTRON, "−", fs=7)
+    ax.text(p[0] + 0.12, p[1] + 0.05, "$-e$", ha="left", va="bottom", fontsize=9)
+    # кулоновский потенциал (Z = 1): U = -2 Ry · r_B / r, уровни E_n = -Ry/n^2
+    r = np.linspace(0.08, 20, 800)
+    U = -2 / r
+    ax2.axhspan(0, 0.35, color=cm.GRID, lw=0)
+    ax2.text(19.5, 0.17, "$E > 0$: электрон свободен", ha="right", va="center",
+             fontsize=7, color=cm.INK2)
+    for n in (1, 2, 3):
+        E = -1 / n**2
+        rt = 2 * n**2                      # классическая точка поворота
+        ax2.plot([0, rt], [E, E], color=cm.C_LEVEL, lw=1.2)
+        ax2.plot([rt, 20], [E, E], color=cm.C_LEVEL, lw=0.5, ls=(0, (3, 2)))
+        ax2.text(20.3, E, f"$E_{n}$", va="center", fontsize=8)
+    ax2.plot(r, U, color=cm.C_POT, lw=1.4)
+    ax2.text(3.2, -0.88, r"$U(r) = -\dfrac{Ze^2}{r}$", fontsize=9)
+    ax2.axhline(0, color=cm.INK2, lw=0.6)
+    ax2.set_xlim(0, 21.5)
+    ax2.set_ylim(-1.35, 0.35)
+    ax2.set_xticks([0, 2, 8, 18])
+    ax2.set_xlabel(r"$r/r_B$")
+    ax2.set_yticks([-1, -0.25, 0])
+    ax2.set_yticklabels([r"$-\mathrm{Ry}$", r"$-\mathrm{Ry}/4$", "0"])
+    ax2.spines["bottom"].set_visible(False)
+    ax2.tick_params(axis="x", length=0)
+    ax2.set_ylabel("$E$")
+    cm.save(fig, "coulomb-potential")
+
+
 if __name__ == "__main__":
+    coulomb()
     bohr_orbit()
     thomson()
     rutherford()
