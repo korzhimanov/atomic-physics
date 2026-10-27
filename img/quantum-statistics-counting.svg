@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="308" height="138" viewBox="0 0 308 138" font-family="Liberation Serif, Times New Roman, serif">
+
+<text x="10" y="40.0" font-size="18" font-style="italic">а</text>
+<rect x="40" y="16" width="180" height="36" fill="none" stroke="#000" stroke-width="1.5"/>
+<line x1="76" y1="16" x2="76" y2="52" stroke="#000" stroke-width="1.5"/>
+<line x1="112" y1="16" x2="112" y2="52" stroke="#000" stroke-width="1.5"/>
+<line x1="148" y1="16" x2="148" y2="52" stroke="#000" stroke-width="1.5"/>
+<line x1="184" y1="16" x2="184" y2="52" stroke="#000" stroke-width="1.5"/>
+<circle cx="58.0" cy="34.0" r="8" fill="#000" stroke="#000" stroke-width="1.5"/>
+<circle cx="94.0" cy="34.0" r="8" fill="#000" stroke="#000" stroke-width="1.5"/>
+<circle cx="130.0" cy="34.0" r="8" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<circle cx="166.0" cy="34.0" r="8" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<circle cx="202.0" cy="34.0" r="8" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<text x="10" y="110.0" font-size="18" font-style="italic">б</text>
+<circle cx="55.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="82.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="98.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="152.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="168.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="184.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="211.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="268.0" cy="104.0" r="4" fill="#000"/>
+<circle cx="284.0" cy="104.0" r="4" fill="#000"/>
+<line x1="40" y1="86" x2="296" y2="86" stroke="#000" stroke-width="1.5"/>
+<line x1="40" y1="122" x2="296" y2="122" stroke="#000" stroke-width="1.5"/>
+<line x1="40" y1="86" x2="40" y2="122" stroke="#999" stroke-width="1.5" stroke-dasharray="3,3"/>
+<line x1="70" y1="80" x2="70" y2="128" stroke="#000" stroke-width="2.5"/>
+<line x1="110" y1="80" x2="110" y2="128" stroke="#000" stroke-width="2.5"/>
+<line x1="140" y1="80" x2="140" y2="128" stroke="#000" stroke-width="2.5"/>
+<line x1="196" y1="80" x2="196" y2="128" stroke="#000" stroke-width="2.5"/>
+<line x1="226" y1="80" x2="226" y2="128" stroke="#000" stroke-width="2.5"/>
+<line x1="256" y1="80" x2="256" y2="128" stroke="#000" stroke-width="2.5"/>
+<line x1="296" y1="86" x2="296" y2="122" stroke="#999" stroke-width="1.5" stroke-dasharray="3,3"/>
+</svg>
